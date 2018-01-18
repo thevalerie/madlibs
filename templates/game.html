@@ -18,7 +18,20 @@
             {% for adjective in adjectives %}
                 <option value="{{adjective}}">{{adjective}}</option>
             {% endfor %}
-        </select>
+        </select><br>
+        Would you rather:
+        <input type="radio" name="verb" value="jump">jump
+        <input type="radio" name="verb" value="climb">climb
+        <input type="radio" name="verb" value="swim">swim
+        <input type="radio" name="verb" value="hop">hop<br>
+
+        Which of these animals do you like:
+        <input type="checkbox" name="animals" value="giraffes">giraffe
+        <input type="checkbox" name="animals" value="walruses">walrus
+        <input type="checkbox" name="animals" value="hummingbirds">hummingbird
+        <input type="checkbox" name="animals" value="bats">bat
+        <input type="checkbox" name="animals" value="koalas">koala<br>
+
         <input type="submit">
 
     </form>

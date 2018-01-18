@@ -5,7 +5,12 @@
 </head>
 <body>
     <p>
-        There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab. When {{ person }} went to pick it up, it burst into flames in a totally {{ adjective }} way.
+        There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab. When {{ person }} went to pick it up, it burst into flames in a totally {{ adjective }} way. {{ person }} tried to {{ verb }} out of the way, but was blocked by a stampede of
+
+        {% for animal in animals %}
+           {{ animal }} and
+        {% endfor %}
+        .
     </p>
 </body>
 </html>
