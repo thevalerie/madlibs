@@ -51,7 +51,8 @@ def show_madlib_form():
     if is_playing == "False":
         return render_template("goodbye.html")
     else:
-        return render_template("game.html")
+        adjectives = ["squishy", "slithering", "irate", "fluffy", "shiny"]
+        return render_template("game.html", adjectives=adjectives)
 
 
 @app.route('/madlib')

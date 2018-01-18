@@ -10,11 +10,14 @@
         Please enter a noun: <input type="text" name="noun"><br>
         Please select an adjective:
         <select name="adjective">
-            <option value="squishy">squishy</option>
+            <!-- <option value="squishy">squishy</option>
             <option value="slithering">slithering</option>
             <option value="irate">irate</option>
             <option value="fluffy">fluffy</option>
-            <option value="shiny">shiny</option>
+            <option value="shiny">shiny</option> -->
+            {% for adjective in adjectives %}
+                <option value="{{adjective}}">{{adjective}}</option>
+            {% endfor %}
         </select>
         <input type="submit">
 
