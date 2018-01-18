@@ -19,7 +19,7 @@ AWESOMENESS = [
 def start_here():
     """Display homepage."""
 
-    return "Hi! This is the home page."
+    return render_template("home.html")
 
 
 @app.route('/hello')
@@ -64,7 +64,10 @@ def show_madlib():
     noun = request.args.get("noun")
     adjective = request.args.get("adjective")
     verb = request.args.get("verb")
-    animals = request.args.getlist("animals")
+    all_animals = request.args.getlist("animals")
+    num_animals = len(all_animals)
+    first_animals = all_animals[0:-1]
+    last_animal = all_animals[-1:]
 
     return render_template("madlibs.html",
                            person=person,
@@ -72,7 +75,9 @@ def show_madlib():
                            noun=noun,
                            adjective=adjective,
                            verb=verb,
-                           animals=animals)
+                           num_animals=num_animals,
+                           first_animals=first_animals,
+                           last_animal=last_animal)
 
 if __name__ == '__main__':
     # Setting debug=True gives us error messages in the browser and also

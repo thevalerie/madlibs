@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>Madlib 1</title>
+    <style type="static/madlibs/css"></style>
 </head>
 <body>
     <p>
-        There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab. When {{ person }} went to pick it up, it burst into flames in a totally {{ adjective }} way. {{ person }} tried to {{ verb }} out of the way, but was blocked by a stampede of
-
-        {% for animal in animals %}
-           {{ animal }} and
-        {% endfor %}
+        There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab. When {{ person }} went to pick it up, it burst into flames in a totally {{ adjective }} way. {{ person }} tried to {{ verb }} out of the way, but was blocked by a stampede
+        {% if num_animals == 1 %}
+            of {{ last_animal[0] }}
+        {% elif num_animals == 2 %}
+            of
+            {% for animal in first_animals %}
+               {{ animal }}
+            {% endfor %}
+            and {{ last_animal[0] }}
+        {% elif num_animals > 2 %}
+            of
+            {% for animal in first_animals %}
+               {{ animal }},
+            {% endfor %}
+            and {{ last_animal[0] }}
+        {% endif %}
         .
     </p>
 </body>
